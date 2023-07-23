@@ -5,11 +5,15 @@
   </div>
   <div class="w-full h-3/4 flex flex-col justify-center items-center bg-brand-gray">
     <h1 class="text-6xl font-black text-brand-gray-dark">Coloque seu Widget bem aqui</h1>
-    <widget-index></widget-index>
+    <widget />
   </div>
 </template>
 
 <script setup lang="ts">
+import { defineComponent } from 'vue'
+import Widget from '@/views/widget/WidgetIndex.vue'
 
-import WidgetIndex from '@/views/widget/WidgetIndex.vue'
+defineComponent({
+  components: { Widget }
+})
 </script>
