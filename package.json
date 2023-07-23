@@ -12,7 +12,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
-    "vue": "^3.2.13"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
@@ -20,16 +20,16 @@
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-e2e-cypress": "^5.0.8",
     "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-plugin-typescript": "^5.0.8",
     "@vue/cli-plugin-unit-jest": "~5.0.0",
-    "@vue/cli-service": "~4.0.0",
+    "@vue/cli-service": "^5.0.8",
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/test-utils": "^2.0.0-0",
     "@vue/vue3-jest": "^27.0.0-alpha.1",
     "autoprefixer": "^10.4.14",
     "babel-jest": "^27.0.6",
-    "cypress": "^9.7.0",
+    "cypress": "^12.17.2",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
