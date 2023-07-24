@@ -1,7 +1,6 @@
 <template>
   <div class="fixed bottom-0 right-0">
     <teleport to="body">
-      <h1>{{ state.component }}</h1>
       <component :is="state.component" @open-box="handleOpenBox" @close-box="handleCloseBox" />
     </teleport>
   </div>
