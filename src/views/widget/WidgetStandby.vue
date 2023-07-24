@@ -13,5 +13,4 @@
 import IconIndex from '@/components/Icon/IconIndex.vue'
 
 defineEmits(['open-box'])
-
 </script>
