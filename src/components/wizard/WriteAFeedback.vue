@@ -1,5 +1,5 @@
 <template>
-  <h1>WriteAFeedback</h1>
+  <h1>Write a feedback</h1>
 </template>
 
 <script setup lang="ts">

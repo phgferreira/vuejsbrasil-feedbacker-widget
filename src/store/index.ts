@@ -1,7 +1,8 @@
 import { reactive, readonly } from 'vue'
+import SelectFeedbackType from '@/components/wizard/SelectFeedbackType.vue'
 
 export type StoreState = {
-  currentComponent: string,
+  currentComponent: any,
   message: string,
   feedbackType: string,
   fingerprint: string,
@@ -10,7 +11,7 @@ export type StoreState = {
 }
 
 const initialState: StoreState = {
-  currentComponent: 'SelectFeedbackType',
+  currentComponent: SelectFeedbackType,
   message: '',
   feedbackType: '',
   fingerprint: '',
@@ -20,7 +21,7 @@ const initialState: StoreState = {
 
 const state = reactive<StoreState>({ ...initialState })
 
-export function setCurrentComponent (component: string): void {
+export function setCurrentComponent (component: any): void {
   state.currentComponent = component
 }
 
