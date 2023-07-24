@@ -7,9 +7,11 @@ import Loading from './IconLoading.vue'
 import Copy from '@/components/Icon/IconCopy.vue'
 import ChevronDown from '@/components/Icon/IconChevronDown.vue'
 import Chat from '@/components/Icon/IconChat.vue'
+import Close from '@/components/Icon/IconTime.vue'
+import Left from '@/components/Icon/IconLeft.vue'
 
 export default {
-  components: { Loading, Copy, ChevronDown, Chat },
+  components: { Loading, Copy, ChevronDown, Chat, Close, Left },
   props: {
     name: { type: String, required: true }
   }
