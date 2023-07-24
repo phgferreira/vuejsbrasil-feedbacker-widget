@@ -1,7 +1,7 @@
 <template>
   <div class="box animate__animated animate__fadeInUp animate__faster">
     <div class="relative w-full flex" :class="{'justify-between': canShowAdditionalControlAndInfo, 'justify-end': !canShowAdditionalControlAndInfo}">
-      <button v-if="canShowAdditionalControlAndInfo" class="text-xl text-gray-800 focus:outline-none" :disabled="canGoBack" :class="{ 'invisible': canGoBack }" @click="() => ({})">
+      <button v-if="canShowAdditionalControlAndInfo" class="text-xl text-gray-800 focus:outline-none" :disabled="canGoBack" :class="{ 'invisible': canGoBack }" @click="back">
         <icon name="left" :color="colors.gray['800']" />
       </button>
 
@@ -14,7 +14,7 @@
       </button>
     </div>
 
-    Wizard
+    <wizard></wizard>
 
     <div v-if="canShowAdditionalControlAndInfo" class="text-gray-800 text-sm flex">
       <icon name="chat" class="mr-1" :color="brand.graydark" />
@@ -29,7 +29,8 @@ import { computed, defineComponent } from 'vue'
 import { brand } from '../../../palette.js'
 import colors from 'tailwindcss/colors'
 import Icon from '@/components/Icon/IconIndex.vue'
-import Widget from '@/views/playground/PlaygroundIndex.vue'
+import Wizard from '@/components/wizard/WizardIndex.vue'
+import useNavigation from '@/hooks/navigation'
 
 defineEmits(['close-box'])
 defineComponent({
@@ -37,6 +38,7 @@ defineComponent({
 })
 
 const store = useStore()
+const { back } = useNavigation()
 
 const label = computed<string>(() => {
   if (store.feedbackType === 'ISSUE') return 'Reporte um problema'
