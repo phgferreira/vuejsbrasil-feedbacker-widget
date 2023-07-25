@@ -7,12 +7,13 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, onMounted, reactive } from 'vue'
+import { defineComponent, reactive, watch } from 'vue'
 import WidgetStandby from '@/views/widget/WidgetStandby.vue'
 import WidgetBox from '@/views/widget/WidgetBox.vue'
 import useIFrameControl from '@/hooks/iframe'
+import store from '@/store'
 
-onMounted(() => {
+watch(() => store.currentComponent, () => {
   iframe.updateCoreValuesOnStore()
 })
 
