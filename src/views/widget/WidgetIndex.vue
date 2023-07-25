@@ -7,23 +7,32 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, onMounted, reactive } from 'vue'
 import WidgetStandby from '@/views/widget/WidgetStandby.vue'
 import WidgetBox from '@/views/widget/WidgetBox.vue'
+import useIFrameControl from '@/hooks/iframe'
+
+onMounted(() => {
+  iframe.updateCoreValuesOnStore()
+})
 
 defineComponent({
   components: { WidgetStandby, WidgetBox }
 })
+
+const iframe = useIFrameControl()
 
 const state = reactive({
   component: WidgetStandby
 })
 
 function handleOpenBox (): void {
+  iframe.notifyOpen()
   state.component = WidgetBox
 }
 
 function handleCloseBox (): void {
+  iframe.notifyClose()
   state.component = WidgetStandby
 }
 </script>
