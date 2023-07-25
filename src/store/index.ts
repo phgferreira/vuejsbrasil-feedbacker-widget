@@ -1,6 +1,7 @@
 import { reactive, readonly } from 'vue'
 import SelectFeedbackType from '@/components/wizard/SelectFeedbackType.vue'
 import WizardSuccess from '@/components/wizard/WizardSuccess.vue'
+import WizardError from '@/components/wizard/WizardError.vue'
 
 export type StoreState = {
   currentComponent: any,
@@ -13,7 +14,7 @@ export type StoreState = {
 
 const initialState: StoreState = {
   // currentComponent: SelectFeedbackType,
-  currentComponent: WizardSuccess,
+  currentComponent: WizardError,
   message: '',
   feedbackType: '',
   fingerprint: '',
