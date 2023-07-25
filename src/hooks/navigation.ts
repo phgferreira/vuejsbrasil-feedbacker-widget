@@ -2,6 +2,8 @@ import useStore from '@/hooks/store'
 import { setCurrentComponent, setFeedbackType } from '@/store'
 import SelectFeedbackType from '@/components/wizard/SelectFeedbackType.vue'
 import WriteAFeedback from '@/components/wizard/WriteAFeedback.vue'
+import WizardSuccess from '@/components/wizard/WizardSuccess.vue'
+import WizardError from '@/components/wizard/WizardError.vue'
 
 export interface Navigation {
   next(): void;
@@ -25,11 +27,11 @@ export default function useNavigation (): Navigation {
   }
 
   function setErrorState (): void {
-    setCurrentComponent('Error')
+    setCurrentComponent(WizardError)
   }
 
   function setSuccessState (): void {
-    setCurrentComponent('Success')
+    setCurrentComponent(WizardSuccess)
   }
 
   return { next, back, setErrorState, setSuccessState }
