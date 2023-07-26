@@ -36,7 +36,21 @@ function init (apiKey) {
   }
 
   const script = document.createElement('script')
-  script.src = '//cdn.jsdelivr.net/@fingerprintjs/fingerprintjs@3/dist/fp.min.js'
+  // Initialize the agent at application startup.
+  const fpPromise = import('https://openfpcdn.io/fingerprintjs/v3')
+    .then(FingerprintJS => FingerprintJS.load())
+
+  // Get the visitor identifier when you need it.
+  fpPromise
+    .then(fp => fp.get())
+    .then(result => {
+      // This is the visitor identifier:
+      const visitorId = result.visitorId
+      console.log(visitorId)
+    })
+
+  script.src = fpPromise
+  // script.src = '//cdn.jsdelivr.net/@fingerprintjs/fingerprintjs@3/dist/fp.min.js'
   // script.textContent = `
   // // Initialize the agent at application startup.
   // const fpPromise = import('https://openfpcdn.io/fingerprintjs/v3')
